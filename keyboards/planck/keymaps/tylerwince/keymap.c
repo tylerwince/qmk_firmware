@@ -5,6 +5,7 @@ enum planck_layers {
   _NUMBER,
   _SYMBOL,
   _MOUSE,
+  _ARROW,
   _FUNCTION,
 };
 
@@ -23,6 +24,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 #define NumA LT(_NUMBER, KC_A)
 #define SymO LT(_SYMBOL, KC_O)
 #define MseE LT(_MOUSE, KC_E)
+#define ArwU LT(_ARROW, KC_U)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_DVORAK] = LAYOUT_planck_grid(
@@ -30,15 +32,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              * ,-----------------------------------------------------------------------------------.
              * | Tab  |   '  |   ,  |   .  |   P  |   Y  |   F  |   G  |   C  |   R  |   L  |   /  |
              * |------+------+------+------+------+-------------+------+------+------+------+------|
-             * |CtlEsc|A/Num |O/Sym |E/Mse |   U  |   I  |   D  |   H  |   T  |   N  |   S  | Bksp |
+             * |CtlEsc|A/Num |O/Sym |E/Mse |U/Arw |   I  |   D  |   H  |   T  |   N  |   S  | Bksp |
              * |------+------+------+------+------+------|------+------+------+------+------+------|
              * |Func  |   ;  |   Q  |   J  |   K  |   X  |   B  |   M  |   W  |   V  |   Z  |Enter |
              * |------+------+------+------+------+------+------+------+------+------+------+------|
-             * |      | Ctrl | Alt  | GUI  |      |     Space   | Ctrl | Left | Down |  Up  |Right |
+             * |      | Ctrl | Alt  | GUI  |Shift |     Space   | Ctrl | Left | Down |  Up  |Right |
              * `-----------------------------------------------------------------------------------'
              */
           KC_TAB,        KC_QUOTE,          KC_COMMA, KC_DOT,  KC_P,    KC_Y,     KC_F,  KC_G,    KC_C,    KC_R,    KC_L,    KC_SLASH,
-          CTLESC,        NumA,              SymO,     MseE,    KC_U,    KC_I,     KC_D,  KC_H,    KC_T,    KC_N,    KC_S,    KC_BSPACE,
+          CTLESC,        NumA,              SymO,     MseE,    ArwU,    KC_I,     KC_D,  KC_H,    KC_T,    KC_N,    KC_S,    KC_BSPACE,
           MO(_FUNCTION), TD(TD_SEMI_COLON), KC_Q,     KC_J,    KC_K,    KC_X,     KC_B,  KC_M,    KC_W,    KC_V,    KC_Z,    KC_ENTER,
           _______,       KC_LCTRL,          KC_LALT,  KC_LGUI, KC_LSFT, KC_SPACE, KC_NO, KC_RCTL, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT
           ),
@@ -46,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NUMBER] = LAYOUT_planck_grid(
             /* _NUMBER
              * ,-----------------------------------------------------------------------------------.
-             * |RESET |      |      |      |      |      |      |   7  |   8  |   9  |  *   |      |
+             * |      |      |      |      |      |      |      |   7  |   8  |   9  |  *   |      |
              * |------+------+------+------+------+-------------+------+------+------+------+------|
              * |      | Num  |      |      |      |      |      |   4  |   5  |   6  |  /   |      |
              * |------+------+------+------+------+------|------+------+------+------+------+------|
@@ -55,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              * |      |      |      |      |      |    Space    |   =  |   0  |Enter |  -   |      |
              * `-----------------------------------------------------------------------------------'
              */
-          RESET, KC_NO,   KC_NO, KC_NO, KC_NO, KC_NO,    KC_NO, KC_7,    KC_8, KC_9,    KC_PAST, KC_NO,
+          KC_NO, KC_NO,   KC_NO, KC_NO, KC_NO, KC_NO,    KC_NO, KC_7,    KC_8, KC_9,    KC_PAST, KC_NO,
           KC_NO, _______, KC_NO, KC_NO, KC_NO, KC_NO,    KC_NO, KC_4,    KC_5, KC_6,    KC_PSLS, KC_NO,
           KC_NO, KC_NO,   KC_NO, KC_NO, KC_NO, KC_NO,    KC_NO, KC_1,    KC_2, KC_3,    KC_PPLS, KC_NO,
           KC_NO, KC_NO,   KC_NO, KC_NO, KC_NO, KC_SPACE, KC_NO, KC_PEQL, KC_0, KC_PENT, KC_PMNS, KC_NO
@@ -97,6 +99,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           KC_NO, KC_NO, KC_NO, _______, KC_NO,   KC_NO,    KC_NO, KC_MS_L, KC_MS_D, KC_MS_R, KC_NO, KC_NO,          
           KC_NO, KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO,    KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO,
           KC_NO, KC_NO, KC_NO, KC_NO,   KC_BTN1, KC_SPACE, KC_NO, KC_BTN2, KC_NO,   KC_NO,   KC_NO, KC_NO
+          ),
+
+  [_ARROW] = LAYOUT_planck_grid(
+            /* _MOUSE
+             * ,-----------------------------------------------------------------------------------.
+             * |      |      |      |      |      |      |      |      |      |      |      |      |
+             * |------+------+------+------+------+-------------+------+------+------+------+------|
+             * |      |      |      |      | Arw  |      | LEFT | DOWN |  UP  |RIGHT |      |      |
+             * |------+------+------+------+------+------|------+------+------+------+------+------|
+             * |      |      |      |      |      |      |      |      |      |      |      |      |
+             * |------+------+------+------+------+------+------+------+------+------+------+------|
+             * |      |      |      |      |      |    Space    |      |      |      |      |      |
+             * `-----------------------------------------------------------------------------------'
+             */
+
+          KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_NO, KC_NO,   KC_NO, KC_NO, 
+          KC_NO, KC_NO, KC_NO, KC_NO, _______, KC_NO,    KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_NO, KC_NO,          
+          KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_NO, KC_NO,   KC_NO, KC_NO,
+          KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,   KC_SPACE, KC_NO,   KC_NO,   KC_NO, KC_NO,   KC_NO, KC_NO
           ),
 
   [_FUNCTION] = LAYOUT_planck_grid(
@@ -157,11 +178,10 @@ const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][3] = {
             {14,255,255}, {14,255,255}, {14,255,255}, {14,255,255}, {14,255,255}, {14,255,255}, {14,255,255}, {14,255,255}, {14,255,255}, {14,255,255}, {14,255,255}, {14,255,255}, 
             {14,255,255}, {14,255,255}, {14,255,255}, {14,255,255}, {14,255,255}, {14,255,255}, {14,255,255}, {14,255,255}, {14,255,255}, {14,255,255}, {14,255,255} },
 
-  /*  [4] = { {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, 
+    [4] = { {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, 
             {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, 
             {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, 
             {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255}, {105,255,255} },
-  */
 
 };
 
@@ -195,6 +215,9 @@ void rgb_matrix_indicators_user(void) {
       break;
     case 3:
       set_layer_color(3);
+      break;
+    case 4:
+      set_layer_color(4);
       break;
   }
 }
