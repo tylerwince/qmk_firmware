@@ -66,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           KC_NO, _______, KC_NO, KC_NO, KC_NO, KC_NO,    KC_NO, KC_4,    KC_5, KC_6,    KC_PSLS, KC_NO,
           KC_NO, KC_NO,   KC_NO, KC_NO, KC_NO, KC_NO,    KC_NO, KC_1,    KC_2, KC_3,    KC_PPLS, KC_NO,
           KC_NO, KC_NO,   KC_NO, KC_NO, KC_NO, KC_SPACE, KC_NO, KC_PEQL, KC_0, KC_PENT, KC_PMNS, KC_NO
-          )
+          ),
 
   [_SYMBOL] = LAYOUT_planck_grid(
             /* _SYMBOL
@@ -123,7 +123,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           KC_NO,   KC_NO, KC_NO, KC_NO,            KC_NO,            LALT(LCTL(KC_U)), LALT(LCTL(KC_I)), LALT(LCTL(KC_H)), KC_NO, KC_NO, KC_NO,            KC_NO,          
           _______, KC_NO, KC_NO, LALT(LCTL(KC_J)), LALT(LCTL(KC_K)), KC_NO,            KC_NO,            KC_NO,            KC_NO, KC_NO, KC_NO,            LALT(LCTL(KC_ENTER)),
           TO(0),   TO(4), KC_NO, KC_NO,            KC_NO,            KC_SPACE,         KC_NO,            KC_NO,            KC_NO, KC_NO, KC_NO,            KC_NO
-          ),
+          )
 
 };
 
