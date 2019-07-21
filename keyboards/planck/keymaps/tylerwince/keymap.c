@@ -66,20 +66,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_SYMBOL] = LAYOUT_planck_grid(
             /* _SYMBOL
              * ,-----------------------------------------------------------------------------------.
-             * |      |      |      |      |      |  (   |  )   |  &   |  *   |  -   |  _   |      |
+             * |      |      |      |      |      |  (   |  )   |  &   |  *   |  -   |  _   |  `   |
              * |------+------+------+------+------+-------------+------+------+------+------+------|
-             * |      |      | Sym  |      |      |  {   |  }   |  $   |  %   |  ^   |  =   |      |
+             * |      |      | Sym  |      |      |  {   |  }   |  $   |  %   |  ^   |  =   |  ~   |
              * |------+------+------+------+------+------|------+------+------+------+------+------|
-             * |      |      |      |      |      |  [   |  ]   |  !   |  @   |  #   |  +   |      |
+             * |      |      |      |      |      |  [   |  ]   |  !   |  @   |  #   |  +   |  \   |
              * |------+------+------+------+------+------+------+------+------+------+------+------|
-             * |      |      |      |      |      |    Space    |      |      |      |  -   |      |
+             * |      |      |      |      |      |    Space    |      |      |      |  -   |  |   |
              * `-----------------------------------------------------------------------------------'
              */
 
-          KC_NO, KC_NO, KC_NO,   KC_NO, KC_NO, KC_LPRN,  KC_RPRN, KC_AMPR, KC_ASTR, KC_MINS, KC_UNDS, KC_NO,
-          KC_NO, KC_NO, _______, KC_NO, KC_NO, KC_LCBR,  KC_RCBR, KC_DLR,  KC_PERC, KC_CIRC, KC_EQL,  KC_NO,
-          KC_NO, KC_NO, KC_NO,   KC_NO, KC_NO, KC_LBRC,  KC_RBRC, KC_EXLM, KC_AT,   KC_HASH, KC_PLUS, KC_NO,
-          KC_NO, KC_NO, KC_NO,   KC_NO, KC_NO, KC_SPACE, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_MINS, KC_NO
+          KC_NO, KC_NO, KC_NO,   KC_NO, KC_NO, KC_LPRN,  KC_RPRN, KC_AMPR, KC_ASTR, KC_MINS, KC_UNDS, KC_GRV,
+          KC_NO, KC_NO, _______, KC_NO, KC_NO, KC_LCBR,  KC_RCBR, KC_DLR,  KC_PERC, KC_CIRC, KC_EQL,  KC_TILD,
+          KC_NO, KC_NO, KC_NO,   KC_NO, KC_NO, KC_LBRC,  KC_RBRC, KC_EXLM, KC_AT,   KC_HASH, KC_PLUS, KC_BSLS,
+          KC_NO, KC_NO, KC_NO,   KC_NO, KC_NO, KC_SPACE, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_MINS, KC_PIPE
           ),
 
   [_MOUSE] = LAYOUT_planck_grid(
@@ -133,7 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              * `-----------------------------------------------------------------------------------'
              */
 
-          RESET,   KC_NO,   KC_NO, KC_NO,            KC_NO,            LALT(LCTL(KC_7)), LALT(LCTL(KC_8)), KC_NO,            KC_NO, KC_NO, LALT(LCTL(KC_L)), KC_NO, 
+          RESET,   KC_NO,   KC_NO, KC_NO,            KC_NO,            LALT(LCTL(KC_7)), LALT(LCTL(KC_8)), KC_NO,            KC_NO, KC_NO, LALT(LCTL(KC_L)), RGB_TOG, 
           KC_NO,   KC_NO,   KC_NO, KC_NO,            KC_NO,            LALT(LCTL(KC_U)), LALT(LCTL(KC_I)), LALT(LCTL(KC_H)), KC_NO, KC_NO, KC_NO,            KC_NO,          
           _______, KC_NO,   KC_NO, LALT(LCTL(KC_J)), LALT(LCTL(KC_K)), KC_NO,            KC_NO,            KC_NO,            KC_NO, KC_NO, KC_NO,            LALT(LCTL(KC_ENTER)),
           _______, _______, KC_NO, KC_NO,            KC_NO,            KC_SPACE,         KC_NO,            KC_NO,            KC_NO, KC_NO, KC_NO,            KC_NO
