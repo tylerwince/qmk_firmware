@@ -18,8 +18,6 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_SEMI_COLON] = ACTION_TAP_DANCE_DOUBLE(KC_SCLN, KC_COLN),
 };
 
-#define LOWER MO(_LOWER)
-#define RAISE MO(_RAISE)
 #define CTLESC LCTL_T(KC_ESCAPE)
 #define NumA LT(_NUMBER, KC_A)
 #define SymO LT(_SYMBOL, KC_O)
@@ -36,13 +34,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              * |------+------+------+------+------+------|------+------+------+------+------+------|
              * | Func |   ;  |   Q  |   J  |   K  |   X  |   B  |   M  |   W  |   V  |   Z  |Enter |
              * |------+------+------+------+------+------+------+------+------+------+------+------|
-             * |      | Ctrl | Alt  | GUI  |Shift |     Space   | Ctrl | Left | Down |  Up  |Right |
+             * |      | Ctrl | Alt  | LGUI |Shift |     Space   | RGUI | Shift| Alt  | Ctrl |      |
              * `-----------------------------------------------------------------------------------'
              */
           KC_TAB,         KC_QUOTE,          KC_COMMA, KC_DOT,  KC_P,    KC_Y,     KC_F,  KC_G,    KC_C,    KC_R,    KC_L,  KC_SLASH,
           CTLESC,         NumA,              SymO,     MseE,    ArwU,    KC_I,     KC_D,  KC_H,    KC_T,    KC_N,    KC_S,  KC_BSPACE,
           OSL(_FUNCTION), TD(TD_SEMI_COLON), KC_Q,     KC_J,    KC_K,    KC_X,     KC_B,  KC_M,    KC_W,    KC_V,    KC_Z,  KC_ENTER,
-          _______,        KC_LCTRL,          KC_LALT,  KC_LGUI, KC_LSFT, KC_SPACE, KC_NO, KC_RGUI, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT
+          _______,        KC_LCTRL,          KC_LALT,  KC_LGUI, KC_LSFT, KC_SPACE, KC_NO, KC_RGUI, KC_RSFT, KC_RALT, KC_RCTRL, _______
           ),
 
   [_NUMBER] = LAYOUT_planck_grid(
@@ -102,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           ),
 
   [_ARROW] = LAYOUT_planck_grid(
-            /* _MOUSE
+            /* _ARROW
              * ,-----------------------------------------------------------------------------------.
              * |      |      |      |      |      |      |      |      |      |      |      |      |
              * |------+------+------+------+------+-------------+------+------+------+------+------|
